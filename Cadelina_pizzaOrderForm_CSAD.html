@@ -1,0 +1,513 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Montserrat&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Pizza Form Order</title>
+    <style type="text/css">
+    label,
+       h2 {
+        margin: 0;
+        padding: 0;
+        font-size: 100%;
+        font-weight: bold;
+        color: black;
+        display: block;
+        text-align: left;
+        margin-top: 1.25em;
+      }
+
+      fieldset{
+        border-style: dotted;
+        border-color: orange;
+
+      }
+
+      input[type="text"],
+      select {
+        margin: 0;
+        padding: 0;
+        display: block;
+      }
+
+      fieldset legend {
+        padding-top: 1.25em;
+      }
+
+      fieldset label {
+        margin: 0;
+        padding: 0;
+        display: block;
+        font-weight: normal;
+        position: relative;
+        left: -0.5em;
+        margin: 0;
+        padding: 0;
+        padding-left: 0.5em;
+        padding-top: 0.125em;
+        padding-bottom: 0.125em;
+        border: 2px solid transparent;
+        width: 9em;
+      }
+
+      select {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 1.25em;
+        background-color: #FFFEFF;
+        font-size: 1em;
+      }
+
+      input[type="submit"] {
+        margin-top: 2em;
+      }
+        input[type=submit]:focus {
+        outline: 2px solid black;
+      }
+
+      input[type="text"]:hover,
+      fieldset label:hover {
+        background-color: orange;
+      }
+
+      input[type="text"]:focus {
+        outline: 2px solid black;
+        background-color: #EEEEEE;
+      }
+
+      select:focus {
+        outline: 2px solid black;
+        background-color: #EEEEEE;
+      }
+
+      fieldset label.focus {
+        background-color: #EEEEEE;
+        border-color: black;
+      }
+
+      a.header {
+      line-height:10px;
+      text-decoration:none;
+      font-family: Poppins;
+      font-size: 19px;
+      text-transform: uppercase;
+      color: lightblue;
+      letter-spacing: 3px;
+      word-spacing:3px;
+    }
+    a.header:hover{
+      color: orange;
+
+    }
+
+    header{
+      padding:10px;
+      line-height:10px; 
+    }
+
+    .sidebar {
+      height: 100%;
+      width: 160px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      padding-top: 16px;
+  }
+
+  .sidebar a {
+      padding: 6px 8px 6px 16px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #818181;
+      display: block;
+  }
+
+  .sidebar a:hover {
+      color: orange;
+  } 
+
+  .main {
+      margin-left: 160px; 
+      padding: 0px 10px;
+  }
+
+  @media screen and (max-height: 450px) {
+      .sidebar {padding-top: 15px;}
+      .sidebar a {font-size: 18px;}
+  }
+
+   .center{
+      width: 70%;
+      margin: auto;
+  }
+
+  body {
+    background-color: white;
+  }
+
+  button {
+  	background-color: orange;
+  }
+
+    </style>
+</head>
+<body>
+    <link rel="stylesheet" type="text/css">
+    <!--Cadelina, Mark Anthony C.-->
+    <!--1 May, 2021-->
+
+    <div class="sidebar">
+      <img src="Cadelina_IMAGES_CSAD/food.jpg" width="150" height="50"/>
+      <a href="#home"><i class="fa fa-fw fa-home"></i> Home</a>
+      <a href="#services"><i class="fa fa-fw fa-wrench"></i> Services</a>
+      <a href="#clients"><i class="fa fa-fw fa-user"></i> Clients</a>
+      <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+    </div>
+
+    <script>
+    function itemFocus(event) {
+          if( event.target ) event.target.parentNode.classList.add("focus");
+        }
+
+        function itemBlur(event) {
+          if( event.target ) event.target.parentNode.classList.remove("focus");
+        }
+
+        window.addEventListener('load', function load(event) {
+          var itemList = document.querySelectorAll('fieldset input');
+
+          for(var i = 0; i < itemList.length; i++) {
+            var item = itemList[i];
+            item.addEventListener('focus', itemFocus, true);
+            item.addEventListener('blur', itemBlur, true);
+          }
+        }, false);
+    </script>
+
+<div class="center">
+  <form action="/action_page.php">
+<div><img src="Cadelina_IMAGES_CSAD/order.png" width="180" height="100"/>
+
+  <h2>BASIC INFORMATION</h2>
+  <BR>
+  <label for="id-name">First Name *</label>
+  <input id="id-name"
+       type="text"
+       size="30">
+
+  <label for="id-name">Middle Name *</label>
+  <input id="id-name"
+       type="text"
+       size="30">
+
+  <label for="id-name">Last Name *</label>
+  <input id="id-name"
+       type="text"
+       size="30">
+
+  <label for="id-address">
+    Address *
+  </label>
+</div>
+  <input id="id-address"
+       type="text"
+       size="40">
+  <label for="id-phone">
+    Contact Number *
+  </label>
+  <input id="id-phone"
+       type="text"
+       size="18">
+  <label for="email">
+    Email Address *
+  </label>
+  <input id="email"
+       type="text"
+       size="40">
+   <h2>
+    Gender *
+    </h2>
+  <label>
+      <input id="id-gender"
+           name="gender"
+           type="radio"
+           value="Classic">  
+            Male      
+    </label>
+
+  <label>
+      <input id="id-gender"
+           name="gender"
+           type="radio"
+           value="Classic">  
+            Female      
+    </label>
+  <label for="id-delivery">
+    Destination *
+  </label>
+ <textarea rows="4" cols="50" name="comment" form="usrform" style="width:45%;height:50px;padding:2%;font:0.75em/1em ;">
+Enter text here...</textarea>
+
+  <fieldset>
+    <h2>
+    Burger
+    </h2>
+    <br>
+      <input id="id-burger1"
+           name="burger"
+           type="radio"
+           value="Thin">
+      
+            Single Patty
+          
+    </label>
+    <label>
+      <input id="id-burger2"
+           name="burger"
+           type="radio"
+           value="Classic">
+      
+            Double Patty
+          
+    </label>
+    <hr>
+      <label>
+      <input name="topping"
+           type="checkbox"
+           value="Cheese">
+            Cheese
+    </label>
+    
+    <label>
+      <input name="topping"
+           type="checkbox"
+           value="Cheese">
+            Coleslaw
+    </label>
+    
+    <label>
+      <input name="topping"
+           type="checkbox"
+           value="Cheese">
+            Tomato
+    </label>
+    
+    <label>
+      <input name="topping"
+           type="checkbox"
+           value="Cheese">
+            Onion
+    </label>
+    
+    
+    <label>
+      <input name="topping"
+           type="checkbox"
+           value="Cheese">
+            Cucumber
+    </label>
+    
+    <label>
+      <input name="topping"
+           type="checkbox"
+           value="Cheese">
+            Bacon
+    </label>
+    
+    
+    <hr>
+    <p>Choice of Bun</p>
+    <label>
+     <input id="id-buns1"
+           name="buns"
+           type="radio"
+           value="Thin">
+      
+         White Bun
+          
+    </label>
+	
+    <label>
+      <input id="id-buns2"
+           name="buns"
+           type="radio"
+           value="Classic">
+      
+         Wheat Bun
+          
+    </label>
+	<br>
+    <label for="quantity">Quantity:
+  		<input type="number" id="quantity" name="quantity" min="1" max="15">
+   	</fieldset>
+ 	</label>
+
+  	<fieldset>
+    <h2>
+      Pasta Sauce
+    </h2>
+    <br>
+    <label>
+      <input id="id-pasta1"
+           name="pasta"
+           type="radio"
+           value="Thin">
+      
+            Pesto Pasta
+          
+    </label>
+    <label>
+      <input id="id-pasta2"
+           name="pasta"
+           type="radio"
+           value="Classic">
+      
+            Salsa di Noci 
+          
+    </label>
+    <label>
+    <input id="id-pasta1"
+           name="pasta"
+           type="radio"
+           value="Thin">
+      
+      		Carbonara 
+          
+    </label>
+    <label>
+      <input id="id-pasta2"
+           name="pasta"
+           type="radio"
+           value="Classic">
+      
+            Bolognese  
+          
+    </label>
+     <label>
+      <input id="id-pasta2"
+           name="pasta"
+           type="radio"
+           value="Classic">
+      
+            Marinara Sauce
+          
+    </label>
+    <br>
+    <label for="quantity">Quantity: (perbox)
+ 	 <input type="number" id="quantity" name="quantity" min="1" max="10">
+  	</label>
+  	</fieldset>
+   
+	<fieldset>
+	<h2>
+    Fries
+    </h2>
+    <br>
+    <label for="Fries">Size:</label>
+  <select name="fries" id="Size">
+  	<option value="empty">Choose</option>
+    <option value="Small">Small</option>
+    <option value="Medium">Medium</option>
+    <option value="Large">Large</option>
+  </select>
+  <p>Flavor</p>
+  <input id="id-fries1"
+           name="fries"
+           type="radio"
+           value="Thin">
+      
+            BBQ
+          
+    </label>
+    <label>
+      <input id="id-fries2"
+           name="fries"
+           type="radio"
+           value="Classic">
+      
+            Cheese
+          
+    </label>
+    
+    <input id="id-fries1"
+           name="fries"
+           type="radio"
+           value="Thin">
+      
+            Sour Cream
+          
+    </label>
+    <br><br>
+    <label for="quantity">Quantity:
+  		<input type="number" id="quantity" name="quantity" min="1" max="10">
+   	</label>
+    
+  </fieldset>
+  
+  <fieldset>
+  <h2>Drinks</h2>
+  <br>
+  <label for="Drinks">Quantity:</label>
+  <select name="drinks" id="Size">
+  	<option value="empty">Choose</option>
+    <option value="Milk">Sprite</option>
+    <option value="Water">Coca-cola</option>
+    <option value="Juice">Pepsi</option>
+  </select>
+  <label for="Drinks">Size:</label>
+  <select name="drinks" id="Size">
+  	<option value="empty">Choose</option>
+    <option value="S">Small</option>
+    <option value="M">Medium</option>
+    <option value="L">Large</option>
+  </select>
+  
+  <label for="quantity">Quantity:
+  <input type="number" id="quantity" name="quantity" min="1" max="10">
+  </label>
+  </fieldset>
+  <br>
+   	<label for="id-delivery">
+   		Feedback *
+  	</label>
+    <textarea rows="4" cols="50" name="comment" form="usrform" style="width:45%;height:50px;padding:2%;font:0.75em/1em ;">
+  Hey... say something!</textarea>
+
+  <label>
+    <input id="id-drinks1"
+           name="drinks"
+           type="radio"
+           value="Thin">
+      
+            Pickup
+          
+      <input id="id-drinks2"
+           name="drinks"
+           type="radio"
+           value="Classic">
+      
+            Delivery
+          
+    </label>
+    
+          
+  <label>
+  <input 
+  		type="submit"
+       	value="Submit Order"
+       	onclick="submitOrder(event)">
+  <button type="reset" value="Reset">Reset</button>
+
+  <br><br><br>
+</form>
+</div>
+
+
+
+</body>
+</html>
